@@ -1,0 +1,11 @@
+node_modules/
+.wrangler/
+.DS_Store
+
+# Segreti — mai nel repository.
+# .env.example (il modello senza valori) invece va versionato.
+.dev.vars
+.dev.vars.*
+.env
+.env.local
+!.env.example
