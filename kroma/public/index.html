@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kroma genera l'anteprima del tuo sito web in pochi secondi. Scegli uno stile, descrivi la tua attività e ricevi subito la tua proposta su misura.">
+  <meta name="theme-color" content="#040613">
+
+  <title>Kroma — Il tuo sito web, generato in pochi secondi</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stili -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Salta al contenuto</a>
+
+  <!-- ======================================================================
+       BACKDROP — mesh gradient animato
+       ====================================================================== -->
+  <div class="backdrop" aria-hidden="true">
+    <div class="glow glow--violet"></div>
+    <div class="glow glow--blue"></div>
+    <div class="glow glow--teal"></div>
+  </div>
+
+
+  <!-- ======================================================================
+       NAVBAR
+       ====================================================================== -->
+  <header class="nav">
+    <div class="container">
+      <nav class="nav__inner glass" aria-label="Navigazione principale">
+
+        <a class="brand" href="#top">
+          <span class="brand__name">Kroma</span>
+          <span class="brand__dot" aria-hidden="true"></span>
+        </a>
+
+        <input class="nav__toggle-input" type="checkbox" id="nav-toggle">
+
+        <label class="nav__toggle" for="nav-toggle">
+          <span class="nav__toggle-bars" aria-hidden="true"></span>
+          <span class="sr-only">Apri o chiudi il menu</span>
+        </label>
+
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#generatore">Genera</a></li>
+            <li><a class="nav__link" href="#come-funziona">Come funziona</a></li>
+            <li><a class="nav__link" href="preview.html#paywall">Prezzi</a></li>
+            <li><a class="nav__link" href="#contatti">Contatti</a></li>
+          </ul>
+          <a class="btn btn--primary" href="#generatore">Crea il tuo sito</a>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ======================================================================
+       MAIN
+       ====================================================================== -->
+  <main id="main">
+
+    <!-- ============================ HERO ============================== -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container">
+
+        <div class="hero__intro">
+          <p class="eyebrow">Anteprima generata dall'AI</p>
+
+          <h1 class="hero__title" id="hero-title">
+            Il tuo sito web,<br>
+            <span class="hero__title-gradient">pronto prima del caffè.</span>
+          </h1>
+
+          <p class="hero__lead">
+            Scegli uno stile, raccontaci in due righe cosa fai e Kroma costruisce
+            l'anteprima del tuo sito su misura. Nessun template generico, nessuna
+            attesa: guardi il risultato e decidi con calma.
+          </p>
+
+          <ul class="hero__meta">
+            <li>Anteprima in 60 secondi</li>
+            <li>Nessuna carta richiesta</li>
+            <li>Design su misura per la tua attività</li>
+          </ul>
+        </div>
+
+        <!-- ===================== MODULO GENERATORE ===================== -->
+        <section class="generator glass glass--sheen" id="generatore" aria-labelledby="generator-title">
+
+          <div class="generator__head">
+            <h2 class="generator__title" id="generator-title">Genera la tua anteprima</h2>
+            <span class="generator__badge">3 passaggi &middot; 60 secondi</span>
+          </div>
+
+          <form class="generator__form wizard" id="generator-form" action="#" method="post" novalidate>
+
+            <!-- Barra di avanzamento -->
+            <ol class="wizard__progress" aria-hidden="true">
+              <li class="wizard__progress-item is-current" data-progress="1">
+                <span class="wizard__progress-dot">1</span>
+                <span class="wizard__progress-label">Stile</span>
+              </li>
+              <li class="wizard__progress-item" data-progress="2">
+                <span class="wizard__progress-dot">2</span>
+                <span class="wizard__progress-label">Descrizione</span>
+              </li>
+              <li class="wizard__progress-item" data-progress="3">
+                <span class="wizard__progress-dot">3</span>
+                <span class="wizard__progress-label">Email</span>
+              </li>
+            </ol>
+
+            <!-- Annuncio per screen reader al cambio di step -->
+            <p class="sr-only" id="wizard-status" role="status" aria-live="polite"></p>
+
+            <!-- ================= STEP 1 — Scelta stile ================= -->
+            <div class="wizard__step" data-step="1">
+
+            <fieldset class="step">
+              <legend class="step__legend" tabindex="-1">
+                <span class="step__number" aria-hidden="true">1</span>
+                Scegli lo stile del tuo sito
+              </legend>
+              <p class="step__hint">Quattro direzioni visive. Puoi cambiarle in qualsiasi momento.</p>
+
+              <div class="style-grid">
+
+                <!-- Futuro -->
+                <label class="style-card" for="stile-futuro">
+                  <input class="style-card__input" type="radio" name="stile" id="stile-futuro" value="futuro">
+                  <span class="style-card__body">
+                    <span class="style-card__check" aria-hidden="true"></span>
+                    <span class="style-card__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M13 2 4.5 13.5H11l-.5 8.5L19.5 10.5H13z"/>
+                      </svg>
+                    </span>
+                    <span class="style-card__name">Futuro</span>
+                    <span class="style-card__desc">Tecnologico, scuro, animato. Per chi vende innovazione.</span>
+                  </span>
+                </label>
+
+                <!-- Fiducia -->
+                <label class="style-card" for="stile-fiducia">
+                  <input class="style-card__input" type="radio" name="stile" id="stile-fiducia" value="fiducia">
+                  <span class="style-card__body">
+                    <span class="style-card__check" aria-hidden="true"></span>
+                    <span class="style-card__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 21s7.5-4.2 7.5-9.8V5.4L12 2.8 4.5 5.4v5.8C4.5 16.8 12 21 12 21z"/>
+                        <path d="m9.2 11.8 2 2 3.6-3.8"/>
+                      </svg>
+                    </span>
+                    <span class="style-card__name">Fiducia</span>
+                    <span class="style-card__desc">Sobrio e professionale. Per studi, consulenti e servizi.</span>
+                  </span>
+                </label>
+
+                <!-- Bottega -->
+                <label class="style-card" for="stile-bottega">
+                  <input class="style-card__input" type="radio" name="stile" id="stile-bottega" value="bottega">
+                  <span class="style-card__body">
+                    <span class="style-card__check" aria-hidden="true"></span>
+                    <span class="style-card__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3.5 9.5 5 4.5h14l1.5 5a3 3 0 0 1-5.7 1.4 3 3 0 0 1-5.6 0A3 3 0 0 1 3.5 9.5z"/>
+                        <path d="M5 11.5v8h14v-8"/>
+                        <path d="M10 19.5v-5h4v5"/>
+                      </svg>
+                    </span>
+                    <span class="style-card__name">Bottega</span>
+                    <span class="style-card__desc">Caldo e artigianale. Per attività locali e laboratori.</span>
+                  </span>
+                </label>
+
+                <!-- Vetrina -->
+                <label class="style-card" for="stile-vetrina">
+                  <input class="style-card__input" type="radio" name="stile" id="stile-vetrina" value="vetrina">
+                  <span class="style-card__body">
+                    <span class="style-card__check" aria-hidden="true"></span>
+                    <span class="style-card__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="16" rx="2.5"/>
+                        <path d="M3 9.5h18"/>
+                        <path d="M9 20V9.5"/>
+                      </svg>
+                    </span>
+                    <span class="style-card__name">Vetrina</span>
+                    <span class="style-card__desc">Immagini grandi e catalogo. Per prodotti e portfolio.</span>
+                  </span>
+                </label>
+
+              </div>
+
+              <p class="wizard__error" data-error-for="1" hidden></p>
+            </fieldset>
+
+            <div class="wizard__nav">
+              <button class="btn btn--primary" type="button" data-action="next">
+                Avanti
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+
+            </div>
+            <!-- ================= /STEP 1 ================= -->
+
+
+            <!-- ================= STEP 2 — Prompt ================= -->
+            <div class="wizard__step" data-step="2">
+
+            <fieldset class="step">
+              <legend class="step__legend" tabindex="-1">
+                <span class="step__number" aria-hidden="true">2</span>
+                Descrivi la tua azienda
+              </legend>
+              <p class="step__hint">Più sei specifico, più l'anteprima sarà tua. Bastano tre righe.</p>
+
+              <div class="field">
+                <label class="field__label sr-only" for="prompt">Descrizione dell'azienda</label>
+                <textarea
+                  class="textarea"
+                  id="prompt"
+                  name="prompt"
+                  rows="5"
+                  maxlength="600"
+                  placeholder="Esempio: restauro infissi in legno a Pavia. Lavoro su finestre d'epoca e portoni storici, seguo il cliente dal sopralluogo alla posa. Cerco clienti privati e amministratori di condominio."></textarea>
+                <p class="field__footnote">Massimo 600 caratteri. Nome attività, città, servizi e clienti tipo.</p>
+              </div>
+
+              <p class="wizard__error" data-error-for="2" hidden></p>
+            </fieldset>
+
+            <div class="wizard__nav">
+              <button class="btn btn--ghost" type="button" data-action="prev">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="M19 12H6M11 6l-6 6 6 6"/></svg>
+                Indietro
+              </button>
+              <button class="btn btn--primary" type="button" data-action="next">
+                Avanti
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+
+            </div>
+            <!-- ================= /STEP 2 ================= -->
+
+
+            <!-- ================= STEP 3 — Email + CTA ================= -->
+            <div class="wizard__step" data-step="3">
+
+            <fieldset class="step">
+              <legend class="step__legend" tabindex="-1">
+                <span class="step__number" aria-hidden="true">3</span>
+                Ricevi l'anteprima
+              </legend>
+              <p class="step__hint">Ti mandiamo il link della tua anteprima. Niente spam, promesso.</p>
+
+              <div class="field">
+                <label class="field__label sr-only" for="email">Il tuo indirizzo email</label>
+                <input
+                  class="input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  placeholder="nome@tuaazienda.it">
+                <p class="field__footnote">Ci serve solo per mandarti il link dell'anteprima.</p>
+              </div>
+
+              <p class="wizard__error" data-error-for="3" hidden></p>
+            </fieldset>
+
+            <div class="wizard__nav">
+              <button class="btn btn--ghost" type="button" data-action="prev">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="M19 12H6M11 6l-6 6 6 6"/></svg>
+                Indietro
+              </button>
+              <button class="btn btn--primary btn--lg" type="submit">
+                Genera il mio Sito Ora
+              </button>
+            </div>
+
+            <p class="generator__legal">
+              Inviando il modulo accetti la nostra
+              <a href="#privacy">informativa privacy</a>. Puoi cancellarti quando vuoi.
+            </p>
+
+            </div>
+            <!-- ================= /STEP 3 ================= -->
+
+          </form>
+
+          <!-- ============== ATTESA — spinner ambra ============== -->
+          <div class="wizard__pending" id="wizard-pending" hidden>
+            <div class="spinner" aria-hidden="true"></div>
+            <p class="wizard__pending-title">Stiamo costruendo il tuo sito…</p>
+            <p class="wizard__pending-text" role="status">
+              L'Intelligenza Artificiale sta costruendo il layout.
+              L'operazione richiederà pochi minuti.
+              <span class="wizard__pending-backup">(Riceverai comunque il link via email)</span>
+            </p>
+            <p class="wizard__pending-elapsed" id="wizard-elapsed" aria-hidden="true"></p>
+          </div>
+
+          <!-- ============== SUCCESSO ============== -->
+          <div class="wizard__success" id="wizard-success" hidden>
+            <div class="wizard__success-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg>
+            </div>
+            <h3 class="wizard__success-title">Ci sta mettendo più del previsto.</h3>
+            <p class="wizard__success-text">
+              La tua anteprima è ancora in lavorazione. Puoi chiudere questa
+              pagina: appena è pronta ti arriva il link via email, entro pochi
+              minuti.
+            </p>
+            <p class="wizard__success-note">
+              Non arriva nulla? Guarda nello spam, oppure scrivici a
+              <a href="mailto:kroma.site@gmail.com">kroma.site@gmail.com</a>.
+            </p>
+          </div>
+
+          <!-- ============== ERRORE DI INVIO ============== -->
+          <div class="wizard__failure" id="wizard-failure" hidden>
+            <div class="wizard__failure-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <h3 class="wizard__failure-title">Non siamo riusciti a inviare la richiesta.</h3>
+            <p class="wizard__failure-text" id="wizard-failure-text">
+              Controlla la connessione e riprova: i dati che hai inserito sono ancora qui.
+            </p>
+            <button class="btn btn--primary" type="button" id="wizard-retry">Riprova</button>
+            <p class="wizard__success-note">
+              Se continua a non funzionare, scrivici a
+              <a href="mailto:kroma.site@gmail.com">kroma.site@gmail.com</a>.
+            </p>
+          </div>
+
+        </section>
+        <!-- =================== /MODULO GENERATORE ==================== -->
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="footer" id="contatti">
+    <div class="container">
+      <div class="footer__inner glass glass--sheen">
+
+        <div class="footer__grid">
+
+          <!-- Brand -->
+          <div class="footer__col">
+            <a class="brand" href="#top">
+              <span class="brand__name">Kroma</span>
+              <span class="brand__dot" aria-hidden="true"></span>
+            </a>
+            <p class="footer__tagline">
+              Siti web su misura per piccole imprese e professionisti.
+              Anteprima gratuita, poi decidi tu.
+            </p>
+          </div>
+
+          <!-- Contatti -->
+          <div class="footer__col">
+            <h2 class="footer__heading">Contatti</h2>
+            <ul class="footer__list">
+              <li>
+                <a class="footer__link" href="mailto:kroma.site@gmail.com">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/>
+                    <path d="m3 7 9 6 9-6"/>
+                  </svg>
+                  kroma.site@gmail.com
+                </a>
+              </li>
+              <li>
+                <a class="footer__link" href="tel:+393717608305">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 16.5v2.6a1.9 1.9 0 0 1-2.1 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.3 4.3 1.9 1.9 0 0 1 4.2 2.2h2.6a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2L8 9.4a15 15 0 0 0 5.6 5.6l1-1a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/>
+                  </svg>
+                  +39 371 760 8305
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social -->
+          <div class="footer__col">
+            <h2 class="footer__heading">Seguici</h2>
+            <ul class="footer__list">
+              <li>
+                <a class="footer__link" href="https://www.tiktok.com/@dinamicawebitalia" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M16.5 2h-3v13.2a2.6 2.6 0 1 1-2.1-2.6v-3a5.6 5.6 0 1 0 5.1 5.6V9.1a6.9 6.9 0 0 0 4 1.3v-3a4 4 0 0 1-4-3.9V2z"/>
+                  </svg>
+                  TikTok &mdash; @dinamicawebitalia
+                </a>
+              </li>
+              <li>
+                <a class="footer__link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/>
+                  </svg>
+                  Facebook &mdash; Kroma
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="footer__bottom">
+          <p>&copy; 2026 Kroma. Tutti i diritti riservati.</p>
+          <!-- Inserire P.IVA qui -->
+          <p class="footer__bottom-links">
+            <a class="footer__link" href="billing.html">Area Clienti</a>
+            <a class="footer__link" href="#privacy">Privacy</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="main.js" defer></script>
+
+</body>
+</html>

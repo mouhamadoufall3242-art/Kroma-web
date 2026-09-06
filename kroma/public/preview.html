@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La tua anteprima Kroma è pronta. Guarda il sito generato per la tua attività e scegli come completarlo.">
+  <meta name="theme-color" content="#040613">
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>La tua anteprima è pronta — Kroma</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stili -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#paywall">Vai alle opzioni di acquisto</a>
+
+  <!-- ======================================================================
+       BACKDROP — mesh gradient animato
+       ====================================================================== -->
+  <div class="backdrop" aria-hidden="true">
+    <div class="glow glow--violet"></div>
+    <div class="glow glow--blue"></div>
+    <div class="glow glow--teal"></div>
+  </div>
+
+
+  <!-- ======================================================================
+       NAVBAR — identica a index.html
+       ====================================================================== -->
+  <header class="nav">
+    <div class="container">
+      <nav class="nav__inner glass" aria-label="Navigazione principale">
+
+        <a class="brand" href="index.html">
+          <span class="brand__name">Kroma</span>
+          <span class="brand__dot" aria-hidden="true"></span>
+        </a>
+
+        <input class="nav__toggle-input" type="checkbox" id="nav-toggle">
+
+        <label class="nav__toggle" for="nav-toggle">
+          <span class="nav__toggle-bars" aria-hidden="true"></span>
+          <span class="sr-only">Apri o chiudi il menu</span>
+        </label>
+
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="index.html#generatore">Genera</a></li>
+            <li><a class="nav__link" href="index.html#come-funziona">Come funziona</a></li>
+            <li><a class="nav__link" href="#paywall">Prezzi</a></li>
+            <li><a class="nav__link" href="#contatti">Contatti</a></li>
+          </ul>
+          <a class="btn btn--primary" href="#paywall">Attiva il sito</a>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ======================================================================
+       MAIN
+       ====================================================================== -->
+  <main id="main">
+
+    <section class="container" aria-labelledby="preview-title">
+
+      <!-- ===================== INTRO KROMA ====================== -->
+      <div class="preview-intro">
+        <p class="eyebrow">Anteprima pronta</p>
+        <h1 class="preview-intro__title" id="preview-title">
+          Ecco il tuo sito. <span class="text-accent">Costruito in 47 secondi.</span>
+        </h1>
+        <p class="preview-intro__lead">
+          Questa è la proposta generata a partire dalla tua descrizione. Guarda con
+          calma la parte in alto: è già il tuo sito, non un template.
+        </p>
+      </div>
+
+      <!-- ===================== FINESTRA ANTEPRIMA ====================== -->
+      <div class="preview-frame glass">
+
+        <!-- Barra del browser simulata -->
+        <div class="preview-frame__bar" aria-hidden="true">
+          <div class="preview-frame__dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="preview-frame__url" id="preview-url">https://studio-alba.it</div>
+          <div class="preview-frame__tag" id="preview-tag">Anteprima demo</div>
+        </div>
+
+        <!-- Contenitore del contenuto: al suo interno si alternano la demo
+             statica e il sito davvero generato, con sopra la zona bloccata. -->
+        <div class="preview-body" id="preview-body">
+
+        <!-- ============================================================
+             SITO GENERATO — riempito da preview.js quando l'URL ha un ?id=
+             Sta in un iframe isolato: vedi la nota in preview.js sul perché
+             non viene iniettato direttamente nella pagina.
+             ============================================================ -->
+        <iframe
+          class="preview-live"
+          id="preview-live"
+          title="Anteprima del tuo sito"
+          sandbox="allow-popups"
+          referrerpolicy="no-referrer"
+          hidden></iframe>
+
+        <!-- Attesa: l'anteprima esiste ma non è ancora pronta -->
+        <div class="preview-loading" id="preview-loading" hidden>
+          <div class="spinner" aria-hidden="true"></div>
+          <p class="preview-loading__text" role="status">
+            La tua anteprima è ancora in lavorazione. Resta qui: si apre da sola
+            appena è pronta.
+          </p>
+        </div>
+
+        <!-- Errore: generazione fallita, oppure link non valido -->
+        <div class="preview-error" id="preview-error" hidden>
+          <div class="preview-error__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <h2 class="preview-error__title" id="preview-error-title">
+            Questa anteprima non si è generata.
+          </h2>
+          <p class="preview-error__text" id="preview-error-text">
+            È capitato: a volte la generazione si inceppa. Non serve rifare tutto
+            da capo — chiamaci e te la sblocchiamo a mano, di solito in giornata.
+          </p>
+          <a class="btn btn--primary btn--lg" href="tel:+393717608305">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><path d="M21 16.5v2.6a1.9 1.9 0 0 1-2.1 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.3 4.3 1.9 1.9 0 0 1 4.2 2.2h2.6a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2L8 9.4a15 15 0 0 0 5.6 5.6l1-1a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>
+            Chiama il +39 371 760 8305
+          </a>
+          <p class="preview-error__note">
+            Preferisci scrivere? <a href="mailto:kroma.site@gmail.com">kroma.site@gmail.com</a>
+          </p>
+        </div>
+
+        <!-- ============================================================
+             DEMO STATICA — quello che si vede senza ?id= nell'URL
+             Sito d'esempio: studio di architettura (contenuti fittizi)
+             ============================================================ -->
+        <div class="site" id="preview-demo">
+          <div class="site__inner">
+
+            <!-- Navbar del sito generato -->
+            <nav class="site__nav" aria-label="Navigazione del sito in anteprima">
+              <div class="site__brand">
+                <span class="site__brand-name">Studio Alba</span>
+                <span class="site__brand-sub">Architettura &amp; Paesaggio</span>
+              </div>
+              <ul class="site__nav-list">
+                <li>Progetti</li>
+                <li>Studio</li>
+                <li>Approccio</li>
+                <li>Contatti</li>
+              </ul>
+            </nav>
+
+            <!-- Hero del sito generato -->
+            <div class="site__hero">
+
+              <div class="site__hero-text">
+                <span class="site__eyebrow">Dal 1998 · Milano</span>
+
+                <h2 class="site__title">
+                  Diamo forma allo spazio,<br>
+                  <em>e alla luce che lo attraversa.</em>
+                </h2>
+
+                <p class="site__lead">
+                  Progettiamo residenze private, spazi culturali e recuperi di edifici
+                  storici. Ogni progetto nasce da un sopralluogo lungo, da un disegno a
+                  mano e da un dialogo che non ha fretta.
+                </p>
+
+                <div class="site__actions">
+                  <span class="site__btn">Guarda i progetti</span>
+                  <span class="site__btn site__btn--outline">Parliamo del tuo</span>
+                </div>
+              </div>
+
+              <figure class="site__figure">
+                <svg viewBox="0 0 480 600" role="img" aria-label="Composizione architettonica astratta: volumi sovrapposti e luce radente">
+                  <defs>
+                    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#EFE9DE"/>
+                      <stop offset="100%" stop-color="#D6CCBC"/>
+                    </linearGradient>
+                    <linearGradient id="slabA" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#FBF9F5"/>
+                      <stop offset="100%" stop-color="#DCD3C4"/>
+                    </linearGradient>
+                    <linearGradient id="slabB" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#CFC5B4"/>
+                      <stop offset="100%" stop-color="#A99C87"/>
+                    </linearGradient>
+                    <linearGradient id="shaft" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".85"/>
+                      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+
+                  <rect width="480" height="600" fill="url(#sky)"/>
+                  <circle cx="352" cy="118" r="52" fill="#E8CFA6" opacity=".55"/>
+
+                  <!-- Volumi a sbalzo -->
+                  <rect x="40"  y="196" width="300" height="46" fill="url(#slabA)"/>
+                  <rect x="96"  y="258" width="344" height="40" fill="url(#slabB)"/>
+                  <rect x="40"  y="314" width="286" height="46" fill="url(#slabA)"/>
+                  <rect x="128" y="376" width="312" height="40" fill="url(#slabB)"/>
+
+                  <!-- Setti verticali -->
+                  <g fill="#8E8271" opacity=".55">
+                    <rect x="150" y="242" width="7" height="16"/>
+                    <rect x="228" y="242" width="7" height="16"/>
+                    <rect x="306" y="242" width="7" height="16"/>
+                    <rect x="150" y="298" width="7" height="16"/>
+                    <rect x="228" y="298" width="7" height="16"/>
+                    <rect x="306" y="298" width="7" height="16"/>
+                    <rect x="188" y="360" width="7" height="16"/>
+                    <rect x="266" y="360" width="7" height="16"/>
+                    <rect x="344" y="360" width="7" height="16"/>
+                  </g>
+
+                  <!-- Basamento e verde -->
+                  <rect x="0" y="416" width="480" height="184" fill="#C6BCA9"/>
+                  <rect x="0" y="416" width="480" height="6" fill="#8A6A3B" opacity=".65"/>
+                  <g fill="#8E9B7E" opacity=".7">
+                    <rect x="44"  y="452" width="4" height="88"/>
+                    <circle cx="46"  cy="446" r="19"/>
+                    <rect x="412" y="470" width="4" height="70"/>
+                    <circle cx="414" cy="464" r="15"/>
+                  </g>
+
+                  <!-- Luce radente -->
+                  <polygon points="300,0 480,0 480,300 344,300" fill="url(#shaft)" opacity=".5"/>
+                </svg>
+                <figcaption class="site__figure-caption">Casa sul crinale · 2024</figcaption>
+              </figure>
+
+            </div>
+
+            <!-- Numeri -->
+            <div class="site__stats">
+              <div>
+                <p class="site__stat-value">27</p>
+                <p class="site__stat-label">Anni di studio</p>
+              </div>
+              <div>
+                <p class="site__stat-value">140+</p>
+                <p class="site__stat-label">Progetti realizzati</p>
+              </div>
+              <div>
+                <p class="site__stat-value">9</p>
+                <p class="site__stat-label">Premi di architettura</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- ================== /PARTE VISIBILE ==================== -->
+
+
+        <!-- ============================================================
+             PARTE BLOCCATA — contenuto sfocato + velatura + paywall
+             ============================================================ -->
+        <div class="locked">
+
+          <!-- Livello 1: il contenuto vero, sfocato e non interattivo.
+               Solo per la demo statica: con il sito generato a sfocare è la
+               velatura stessa, tramite backdrop-filter. -->
+          <div class="content-locked" id="locked-demo" aria-hidden="true">
+            <div class="site">
+              <div class="site__inner">
+
+                <h2 class="site__section-title">Cosa facciamo</h2>
+
+                <div class="site__services">
+                  <div class="site__service">
+                    <p class="site__service-index">01</p>
+                    <p class="site__service-name">Progettazione</p>
+                    <p class="site__service-desc">
+                      Dal concept al progetto esecutivo, con disegni tecnici completi e
+                      render fotorealistici per ogni ambiente della casa.
+                    </p>
+                  </div>
+                  <div class="site__service">
+                    <p class="site__service-index">02</p>
+                    <p class="site__service-name">Direzione lavori</p>
+                    <p class="site__service-desc">
+                      Seguiamo il cantiere settimana per settimana, coordiniamo le
+                      imprese e teniamo sotto controllo tempi, costi e qualità.
+                    </p>
+                  </div>
+                  <div class="site__service">
+                    <p class="site__service-index">03</p>
+                    <p class="site__service-name">Interior design</p>
+                    <p class="site__service-desc">
+                      Arredi su misura, scelta dei materiali e studio della luce
+                      artificiale, fino alla consegna della casa arredata.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="site__stats" style="margin-top: 3rem;">
+                  <div>
+                    <p class="site__stat-value">Recuperi</p>
+                    <p class="site__stat-label">Edifici storici</p>
+                  </div>
+                  <div>
+                    <p class="site__stat-value">Interni</p>
+                    <p class="site__stat-label">Residenze private</p>
+                  </div>
+                  <div>
+                    <p class="site__stat-value">Paesaggio</p>
+                    <p class="site__stat-label">Giardini e corti</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Livello 2: velatura dal nero al trasparente -->
+          <div class="locked__veil" aria-hidden="true"></div>
+
+          <!-- Livello 3: paywall -->
+          <section class="paywall glass glass--sheen" id="paywall" aria-labelledby="paywall-title">
+
+            <div class="paywall__head">
+              <h2 class="paywall__title" id="paywall-title">
+                Il tuo nuovo sito è pronto.<br>Scegli come procedere.
+              </h2>
+              <p class="paywall__subtitle">
+                Il resto del sito &mdash; servizi, gallerie, contatti &mdash; è già generato.
+                Ti serve solo decidere chi lo mette online.
+              </p>
+            </div>
+
+            <div class="paywall__grid">
+
+              <!-- ---------- Card sinistra: l'esca ---------- -->
+              <article class="plan plan--decoy">
+                <h3 class="plan__name">Pacchetto Codice</h3>
+
+                <p class="plan__price">
+                  <span class="plan__price-value">290&euro;</span>
+                  <span class="plan__price-period">una tantum</span>
+                </p>
+                <p class="plan__price-note">Pagamento unico, nessun rinnovo.</p>
+
+                <p class="plan__desc">
+                  Scarica solo i file HTML/CSS. Nessun dominio, nessuna assistenza
+                  tecnica, gestione server a tuo carico.
+                </p>
+
+                <ul class="plan__list">
+                  <li class="is-yes">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7"/></svg>
+                    File HTML e CSS del sito
+                  </li>
+                  <li class="is-no">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+                    Dominio non incluso
+                  </li>
+                  <li class="is-no">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+                    Hosting e server a tuo carico
+                  </li>
+                  <li class="is-no">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+                    Nessuna assistenza tecnica
+                  </li>
+                  <li class="is-no">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+                    Nessun aggiornamento successivo
+                  </li>
+                </ul>
+
+                <div class="plan__cta">
+                  <button class="btn btn--ghost btn--block" type="button" data-package="codice">
+                    <span class="btn__label">Scarica i file</span>
+                  </button>
+                </div>
+              </article>
+
+              <!-- ---------- Card destra: offerta highlight ---------- -->
+              <article class="plan plan--highlight">
+                <span class="plan__badge">Consigliato</span>
+
+                <h3 class="plan__name">Pacchetto All-Inclusive</h3>
+
+                <p class="plan__price">
+                  <span class="plan__price-value">90&euro;</span>
+                  <span class="plan__price-period">attivazione + 29&euro;/mese</span>
+                </p>
+                <p class="plan__price-note">Disdici quando vuoi, senza vincoli.</p>
+
+                <p class="plan__desc">
+                  Completiamo noi il sito, dominio incluso, hosting ultra-veloce,
+                  aggiornamenti e supporto continuo inclusi.
+                </p>
+
+                <ul class="plan__list">
+                  <li class="is-yes">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7"/></svg>
+                    Sito completato e messo online da noi
+                  </li>
+                  <li class="is-yes">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7"/></svg>
+                    Dominio .it incluso
+                  </li>
+                  <li class="is-yes">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7"/></svg>
+                    Hosting ultra-veloce e certificato SSL
+                  </li>
+                  <li class="is-yes">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7"/></svg>
+                    Modifiche ai testi quando ti servono
+                  </li>
+                  <li class="is-yes">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7"/></svg>
+                    Supporto continuo via email e telefono
+                  </li>
+                </ul>
+
+                <div class="plan__cta">
+                  <button class="btn btn--primary btn--lg btn--block" type="button" data-package="abbonamento">
+                    <span class="btn__label">Attiva Subito</span>
+                  </button>
+                </div>
+              </article>
+
+            </div>
+
+            <p class="paywall__error" id="paywall-error" role="alert" hidden></p>
+
+            <p class="paywall__footnote">
+              Prezzi IVA esclusa. Il sito resta tuo: se disdici l'abbonamento ti
+              consegniamo i file.
+            </p>
+
+          </section>
+
+        </div>
+        <!-- ================== /PARTE BLOCCATA ==================== -->
+
+        </div>
+        <!-- ================== /preview-body ==================== -->
+
+      </div>
+      <!-- ================== /FINESTRA ANTEPRIMA ==================== -->
+
+    </section>
+
+  </main>
+
+
+  <!-- ======================================================================
+       FOOTER — identico a index.html
+       ====================================================================== -->
+  <footer class="footer" id="contatti">
+    <div class="container">
+      <div class="footer__inner glass glass--sheen">
+
+        <div class="footer__grid">
+
+          <!-- Brand -->
+          <div class="footer__col">
+            <a class="brand" href="index.html">
+              <span class="brand__name">Kroma</span>
+              <span class="brand__dot" aria-hidden="true"></span>
+            </a>
+            <p class="footer__tagline">
+              Siti web su misura per piccole imprese e professionisti.
+              Anteprima gratuita, poi decidi tu.
+            </p>
+          </div>
+
+          <!-- Contatti -->
+          <div class="footer__col">
+            <h2 class="footer__heading">Contatti</h2>
+            <ul class="footer__list">
+              <li>
+                <a class="footer__link" href="mailto:kroma.site@gmail.com">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/>
+                    <path d="m3 7 9 6 9-6"/>
+                  </svg>
+                  kroma.site@gmail.com
+                </a>
+              </li>
+              <li>
+                <a class="footer__link" href="tel:+393717608305">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 16.5v2.6a1.9 1.9 0 0 1-2.1 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.3 4.3 1.9 1.9 0 0 1 4.2 2.2h2.6a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2L8 9.4a15 15 0 0 0 5.6 5.6l1-1a1.9 1.9 0 0 1 2-.4c.8.4 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/>
+                  </svg>
+                  +39 371 760 8305
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social -->
+          <div class="footer__col">
+            <h2 class="footer__heading">Seguici</h2>
+            <ul class="footer__list">
+              <li>
+                <a class="footer__link" href="https://www.tiktok.com/@dinamicawebitalia" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M16.5 2h-3v13.2a2.6 2.6 0 1 1-2.1-2.6v-3a5.6 5.6 0 1 0 5.1 5.6V9.1a6.9 6.9 0 0 0 4 1.3v-3a4 4 0 0 1-4-3.9V2z"/>
+                  </svg>
+                  TikTok &mdash; @dinamicawebitalia
+                </a>
+              </li>
+              <li>
+                <a class="footer__link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/>
+                  </svg>
+                  Facebook &mdash; Kroma
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="footer__bottom">
+          <p>&copy; 2026 Kroma. Tutti i diritti riservati.</p>
+          <!-- Inserire P.IVA qui -->
+          <p class="footer__bottom-links">
+            <a class="footer__link" href="billing.html">Area Clienti</a>
+            <a class="footer__link" href="#privacy">Privacy</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="preview.js" defer></script>
+
+</body>
+</html>
